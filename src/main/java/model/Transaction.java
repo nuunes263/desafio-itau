@@ -4,8 +4,8 @@ import java.time.OffsetDateTime;
 
 public class Transaction {
 
-    public double valor;
-    public OffsetDateTime dataHora;
+    private double valor;
+    private OffsetDateTime dataHora;
 
     public Transaction(double valor, OffsetDateTime dataHora) {
         this.valor = valor;
