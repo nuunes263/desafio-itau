@@ -1,6 +1,5 @@
-package dto;
+package desafio_itau.demo.dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.OffsetDateTime;
@@ -8,7 +7,6 @@ import java.time.OffsetDateTime;
 public class TransactionRequestDto {
 
     @NotNull
-    @Min(0)
     private double valor;
 
     @NotNull

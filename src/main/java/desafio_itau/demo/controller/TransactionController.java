@@ -1,13 +1,12 @@
-package controller;
+package desafio_itau.demo.controller;
 
-import dto.TransactionRequestDto;
+import desafio_itau.demo.dto.TransactionRequestDto;
 import jakarta.validation.Valid;
-import model.Transaction;
+import desafio_itau.demo.model.Transaction;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import services.TransactionService;
+import desafio_itau.demo.services.TransactionService;
 
 import java.time.OffsetDateTime;
 
@@ -23,7 +22,7 @@ public class TransactionController {
 
     @PostMapping
     public ResponseEntity<Void> createTRansaction (@Valid @RequestBody TransactionRequestDto request){
-        if (request.getDataHora().isAfter(OffsetDateTime.now())){
+        if (request.getDataHora().isAfter(OffsetDateTime.now()) || request.getValor() <= 0){
             return ResponseEntity.unprocessableEntity().build();
         }
 

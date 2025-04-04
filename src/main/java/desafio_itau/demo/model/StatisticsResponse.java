@@ -1,4 +1,4 @@
-package model;
+package desafio_itau.demo.model;
 
 import java.util.DoubleSummaryStatistics;
 
